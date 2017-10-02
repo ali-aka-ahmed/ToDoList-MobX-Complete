@@ -6,7 +6,7 @@ https://github.com/aahmed19/ToDoList-MobX-Boilerplate
 
 I recommend you implement the app using State + Props. Then, after experiencing issues using this data model, integrate MobX.
 
-You'll notice if you refresh the page everything disappears. This is because there is no backend server + db.
+You'll notice if you refresh the page everything disappears. This is because there is no backend server + db. First try session storage. See transport-layer in services, code is already there.
 
 As an extra step, integrate Firebase to make the list persist over sessions. I have kept the transport-layer file here if you want to work with it, although you will have
 to update App.js and appState.js as well.
