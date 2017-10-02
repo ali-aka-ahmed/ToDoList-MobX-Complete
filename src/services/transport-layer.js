@@ -7,12 +7,7 @@ export const setTasks = (new_tasks) => sessionStorage.setItem(TASKS, JSON.string
 
 ///// TASKS
 let config = {
-    apiKey: "AIzaSyDARxRPcDhqlrzn36-nKxAIQK6oVMGARao",
-    authDomain: "todolist-f6394.firebaseapp.com",
-    databaseURL: "https://todolist-f6394.firebaseio.com",
-    projectId: "todolist-f6394",
-    storageBucket: "todolist-f6394.appspot.com",
-    messagingSenderId: "303468340463"
+    // COPY YOUR AUTH CONFIG FROM FIREBASE
 };
 
 firebase.initializeApp(config);
@@ -35,7 +30,6 @@ export const getTasksFire = () => DATABASE.ref('/').once('value').then((snapshot
         return_map.set(item.key, item);
     });
     if (return_map) {
-        // console.log('dict item', return_dict);
         return return_map
     } else {
         return new Map()

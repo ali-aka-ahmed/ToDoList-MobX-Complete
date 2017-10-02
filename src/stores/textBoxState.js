@@ -1,5 +1,5 @@
 import {observable} from 'mobx';
-import appState from './Tasks';
+import appState from './appState';
 
 class textBoxState {
     @observable text = '';
@@ -9,8 +9,10 @@ class textBoxState {
     };
 
     handleSubmit = (e) => {
+        // stops default action from form element from triggering
         e.preventDefault();
-        // let uuid = require('uuid/v4');
+        // "require" in ES5 is equivalent to "import" in ES6. Here I'm importing a package that will generate a unique time based id.
+        let uuid = require('uuid/v4');
         if (this.text === '') {
             console.error('error');
             return
@@ -18,11 +20,10 @@ class textBoxState {
         let new_task = {
             text: this.text,
             isDone: false,
-            // key: uuid()
+            key: uuid()
         };
 
         this.text = '';
-        // console.log('create new_task :', new_task);
         appState.addTask(new_task);
     };
 
