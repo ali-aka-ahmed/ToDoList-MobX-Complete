@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import ItemList from './components/itemList';
 import AddItem from './components/addItem';
@@ -13,6 +12,10 @@ class App extends Component {
 
   render() {
     return (
+        // Wrap the provider around the app so you can access the store from anywhere
+        // Note that I am passing textBoxState as a prop to the AddItem component. I could have added it as a prop to the
+        // Provider and accessed it using 'inject'. I am also passing appState as a prop to ItemList component, to show that you
+        // can pass stores as props, although it is not super super common (makes sense to just import it or put it in the provider
         <Provider appState={appState}>
           <div className="App">
             <AddItem textBoxState={textBoxState} />
